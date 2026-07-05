@@ -208,19 +208,29 @@ address { font-style: normal; }
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 8px;
+  z-index: 1002;
+  width: 40px;
+  height: 40px;
 }
 .hamburger span {
   display: block;
-  width: 24px; height: 2px;
+  width: 24px;
+  height: 2px;
   background: var(--text-dark);
   border-radius: 2px;
   transition: var(--transition);
+  transform-origin: center;
 }
+/* Animate to X when open */
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .navbar.scrolled .hamburger span { background: var(--text-dark); }
 
 /* === HERO === */
@@ -624,19 +634,33 @@ address { font-style: normal; }
   .footer-brand { grid-column: span 1; }
   .footer-bottom .container { flex-direction: column; text-align: center; }
   .nav-links {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--purple-deep);
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 32px;
-    z-index: 999;
+    gap: 28px;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--purple-deep);
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-12px);
+    transition: opacity .3s ease, transform .3s ease;
   }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 20px; color: var(--white) !important; }
-  .hamburger { display: flex; z-index: 1001; }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+  .nav-links a {
+    font-size: 22px !important;
+    color: var(--white) !important;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+  .nav-links a::after { display: none; }
+  .hamburger { display: flex; }
   .hero-title { font-size: 42px; }
   .pillars-grid { grid-template-columns: 1fr 1fr; }
   .cta-actions { flex-direction: column; align-items: center; }
