@@ -1,0 +1,12 @@
+{
+  "name": "west-ruwenzori-diocese",
+  "version": "1.0.0",
+  "description": "West Ruwenzori Diocese website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
