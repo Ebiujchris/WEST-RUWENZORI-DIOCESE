@@ -14,7 +14,24 @@ const mime = {
   '.txt': 'text/plain; charset=utf-8'
 };
 
-const rootDir = path.resolve(__dirname, '..');
+function findProjectRoot() {
+  const candidates = [
+    process.cwd(),
+    __dirname,
+    path.resolve(__dirname, '..'),
+    path.resolve(__dirname, '..', '..')
+  ];
+
+  for (const candidate of candidates) {
+    if (fs.existsSync(path.join(candidate, 'index.html'))) {
+      return candidate;
+    }
+  }
+
+  return process.cwd();
+}
+
+const rootDir = findProjectRoot();
 
 module.exports = function handler(req, res) {
   let urlPath = req.url === '/' ? '/index.html' : req.url;
