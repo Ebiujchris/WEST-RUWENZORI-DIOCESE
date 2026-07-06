@@ -682,6 +682,14 @@ address { font-style: normal; }
   .nav-links a::after { display: none; }
   .hamburger { display: flex; }
   .hero-title { font-size: 42px; }
+  .hero-content {
+    margin-left: 0;
+    text-align: center;
+    align-items: center !important;
+    padding: 0 20px;
+  }
+  .hero-verse { max-width: 100%; }
+  .hero-actions { justify-content: center; }
   .pillars-grid { grid-template-columns: 1fr 1fr; }
   .cta-actions { flex-direction: column; align-items: center; }
   .hero-actions { flex-direction: column; }
@@ -873,4 +881,10 @@ address { font-style: normal; }
 @media (max-width: 768px) {
   .archbishop-banner { height: 380px; margin-top: 64px; }
   .archbishop-banner-content { padding-bottom: 36px; }
+}
+
+@media (max-width: 768px) {
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(58,18,89,0.7) 0%, rgba(58,18,89,0.75) 100%);
+  }
 }
