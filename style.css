@@ -276,11 +276,12 @@ address { font-style: normal; }
 }
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(42px, 7vw, 80px);
+  font-size: clamp(32px, 5.5vw, 72px);
   font-weight: 700;
   color: var(--white);
   margin-bottom: 20px;
   text-shadow: 0 2px 20px rgba(0,0,0,.2);
+  line-height: 1.15;
 }
 .hero-verse {
   font-size: 18px;
@@ -681,15 +682,16 @@ address { font-style: normal; }
   }
   .nav-links a::after { display: none; }
   .hamburger { display: flex; }
-  .hero-title { font-size: 42px; }
+  .hero-title { font-size: 24px; line-height: 1.2; }
   .hero-content {
     margin-left: 0;
     text-align: center;
     align-items: center !important;
-    padding: 0 20px;
+    padding: 0 16px;
   }
-  .hero-verse { max-width: 100%; }
+  .hero-verse { max-width: 100%; font-size: 14px; }
   .hero-actions { justify-content: center; }
+  .hero-eyebrow { font-size: 11px; }
   .pillars-grid { grid-template-columns: 1fr 1fr; }
   .cta-actions { flex-direction: column; align-items: center; }
   .hero-actions { flex-direction: column; }
