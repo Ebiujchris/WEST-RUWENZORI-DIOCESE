@@ -618,6 +618,12 @@ address { font-style: normal; }
 .breadcrumb span { color: rgba(255,255,255,.4); }
 
 /* === RESPONSIVE === */
+.responsive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
 @media (max-width: 1024px) {
   .pillars-grid { grid-template-columns: repeat(2, 1fr); }
   .news-grid { grid-template-columns: 1fr 1fr; }
@@ -697,6 +703,8 @@ address { font-style: normal; }
   .pillars-grid { grid-template-columns: 1fr 1fr; }
   .cta-actions { flex-direction: column; align-items: center; }
   .hero-actions { flex-direction: column; }
+  .page-hero { padding: 120px 0 60px; }
+  .container { padding-left: 20px; padding-right: 20px; }
 }
 
 @media (max-width: 480px) {
